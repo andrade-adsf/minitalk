@@ -6,7 +6,7 @@
 /*   By: feandrad <feandrad@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 06:29:39 by feandrad          #+#    #+#             */
-/*   Updated: 2023/06/23 19:11:33 by feandrad         ###   ########.fr       */
+/*   Updated: 2023/06/24 03:46:32 by feandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	main()
 {
-	int pid_t;
+	pid_t pid;
 	
-	pid_t = getpid();
-	printf("PID: %d\n", pid_t);
+	pid = getpid();
+	printf("PID: %d\n", pid);
 	pause();
 }
