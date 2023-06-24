@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feandrad <feandrad@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 06:29:39 by feandrad          #+#    #+#             */
-/*   Updated: 2023/06/23 19:11:33 by feandrad         ###   ########.fr       */
+/*   Created: 2022/09/08 00:34:07 by feandrad          #+#    #+#             */
+/*   Updated: 2022/09/30 03:17:56 by feandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int	main()
+size_t	ft_strlen(const char *str)
 {
-	int pid_t;
-	
-	pid_t = getpid();
-	printf("PID: %d\n", pid_t);
-	pause();
+	size_t	result;
+
+	result = 0;
+	while (str[result])
+		result++;
+	return (result);
 }

@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feandrad <feandrad@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 06:29:39 by feandrad          #+#    #+#             */
-/*   Updated: 2023/06/23 19:11:33 by feandrad         ###   ########.fr       */
+/*   Created: 2022/09/17 03:43:57 by feandrad          #+#    #+#             */
+/*   Updated: 2022/09/30 06:42:12 by feandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int	main()
+void	ft_putnbr_fd(int n, int fd)
 {
-	int pid_t;
-	
-	pid_t = getpid();
-	printf("PID: %d\n", pid_t);
-	pause();
+	if (n == (1 << 31))
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(((n / 10) * -1), fd);
+		ft_putchar_fd('8', fd);
+	}
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd((n * -1), fd);
+	}
+	else if (n > 9)
+	{
+		ft_putnbr_fd((n / 10), fd);
+		ft_putnbr_fd((n % 10), fd);
+	}
+	else
+	{
+		ft_putchar_fd((n + '0'), fd);
+	}
 }

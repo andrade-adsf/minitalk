@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feandrad <feandrad@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 06:29:39 by feandrad          #+#    #+#             */
-/*   Updated: 2023/06/23 19:11:33 by feandrad         ###   ########.fr       */
+/*   Created: 2022/09/17 03:28:52 by feandrad          #+#    #+#             */
+/*   Updated: 2022/09/30 07:35:49 by feandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int	main()
+void	ft_putendl_fd(char *s, int fd)
 {
-	int pid_t;
-	
-	pid_t = getpid();
-	printf("PID: %d\n", pid_t);
-	pause();
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

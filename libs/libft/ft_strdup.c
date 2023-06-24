@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feandrad <feandrad@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 06:29:39 by feandrad          #+#    #+#             */
-/*   Updated: 2023/06/23 19:11:33 by feandrad         ###   ########.fr       */
+/*   Created: 2022/09/17 00:17:34 by feandrad          #+#    #+#             */
+/*   Updated: 2022/09/25 23:50:57 by feandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int	main()
+char	*ft_strdup(const char *s)
 {
-	int pid_t;
-	
-	pid_t = getpid();
-	printf("PID: %d\n", pid_t);
-	pause();
+	char	*str;
+	int		count;
+
+	str = malloc (ft_strlen(s) + 1 * sizeof(char));
+	count = 0;
+	while (s[count] != '\0')
+	{
+		str[count] = s[count];
+		count++;
+	}
+	str[count] = '\0';
+	return (str);
 }

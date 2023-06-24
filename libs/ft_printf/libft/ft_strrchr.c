@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feandrad <feandrad@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 06:29:39 by feandrad          #+#    #+#             */
-/*   Updated: 2023/06/23 19:11:33 by feandrad         ###   ########.fr       */
+/*   Created: 2022/09/09 02:08:55 by feandrad          #+#    #+#             */
+/*   Updated: 2022/09/26 23:13:16 by feandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int	main()
+char	*ft_strrchr(const char *s, int c)
 {
-	int pid_t;
-	
-	pid_t = getpid();
-	printf("PID: %d\n", pid_t);
-	pause();
+	int	count;
+
+	if (c > 255)
+		return ((char *) s);
+	count = 0;
+	while (s[count] != '\0')
+		count++;
+	while (s[count] != c && count > 0)
+		count--;
+	if (s[count] == c)
+		return ((char *)&s[count]);
+	else
+		return (NULL);
 }

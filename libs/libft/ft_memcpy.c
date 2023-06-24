@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feandrad <feandrad@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 06:29:39 by feandrad          #+#    #+#             */
-/*   Updated: 2023/06/23 19:11:33 by feandrad         ###   ########.fr       */
+/*   Created: 2022/09/09 23:44:48 by feandrad          #+#    #+#             */
+/*   Updated: 2022/09/26 23:22:32 by feandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int	main()
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int pid_t;
-	
-	pid_t = getpid();
-	printf("PID: %d\n", pid_t);
-	pause();
+	char	*dest;
+	char	*source;
+	size_t	count;
+
+	if (!dst && !src)
+		return (NULL);
+	dest = (char *)dst;
+	source = (char *)src;
+	count = 0;
+	while (count < n)
+	{
+		dest[count] = source[count];
+		count++;
+	}
+	return (dst);
 }

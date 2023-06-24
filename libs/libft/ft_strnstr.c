@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feandrad <feandrad@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 06:29:39 by feandrad          #+#    #+#             */
-/*   Updated: 2023/06/23 19:11:33 by feandrad         ###   ########.fr       */
+/*   Created: 2022/09/09 02:20:19 by feandrad          #+#    #+#             */
+/*   Updated: 2022/09/25 23:59:20 by feandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int	main()
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int pid_t;
-	
-	pid_t = getpid();
-	printf("PID: %d\n", pid_t);
-	pause();
+	size_t	i;
+
+	if (!haystack)
+		return (NULL);
+	if (!*needle)
+		return ((char *)haystack);
+	while (*haystack && len > 0)
+	{
+		i = 0;
+		while (haystack[i] == needle[i] && (len - i) > 0)
+		{
+			i++;
+			if (!needle[i])
+				return ((char *)haystack);
+		}
+		haystack++;
+		len--;
+	}
+	return (NULL);
 }
